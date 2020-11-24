@@ -1,0 +1,217 @@
+#include "vector"
+#include "iostream"
+using namespace std;
+
+int main()
+{
+    int i, j, n, x, a, s, h, p;
+    double d;
+    string s1,s2,s3,s4;
+    cout << "vvedite kolvo elementov massiva:" << endl;
+    vector <int> v;
+    vector <int> v1;
+    cin >> n;
+    cout << "vvedite massiv:" << endl;
+    for (i = 0; i < n; i++) {
+        cin >> x;
+        v.push_back(x);
+    }
+    cout << "massiv X2:" << endl;
+    for (i = 0; i < n; i++) {
+        cout << (v[i] * 2) << endl;
+    }
+    cout << "vvedite chislo:" << endl;
+    cin >> a;
+    cout << "massiv - ento chislo:" << endl;
+    for (i = 0; i < n; i++) {
+        cout << (v[i] - a) << endl;
+    }
+    cout << "massiv delenii na pervii ego element:" << endl;
+    for (i = 0; i < n; i++) {
+        cout << (v[i] / v[0]) << endl;
+    }
+    j = 0;
+    cout << "summa elementov massiva:" << endl;
+    for (i = 0; i < n; i++) {
+        j = j + v[i];
+    }
+    cout << j << endl;
+
+    s = 0;
+    cout << "summa kvadratov elementov massiva:" << endl;
+    for (i = 0; i < n; i++) {
+        s = s + v[i] * v[i];
+    }
+    cout << s << endl;
+    s = 0;
+    cout << "summa pervix 6 elementov massiva:" << endl;
+    for (i = 0; i < 6; i++) {
+        s = s + v[i];
+    }
+    cout << s << endl;
+    s = 0;
+    cout << "vvedite 2 chisla (II>I):" << endl;
+    cin >> a;
+    cin >> x;
+    cout << "summa elementov massiva s I do II:";
+    for (i = a - 1; i < x; i++) {
+        s = s + v[i];
+    }
+    cout << s << endl;
+    cout << "srednee arifmeticheskoe elementov massiva s I do II:";
+    h = (x - a + 1);
+    d = (s / h);
+    cout << d << endl;
+
+ cout << "vvedite massiv:" << endl;
+ for (i = 0; i < 20; i++) {
+     cin >> x;
+     v1.push_back(x);
+ }
+    cout << "3adanie 3" << endl;
+    for (i = 0; i < 3; i++) {
+        n = v1[i];
+        v1[i] = v1[(20 - 3 + i)];
+        v1[(20 - 3 + i)] = n;
+    }
+    for (i = 0; i < 20; i++) {
+        cout << v1[i] << endl;
+    }
+   
+        cout << "3adanie 4" << endl;
+
+        for (i = 0; i < v1.size(); i++) {
+            if ((v1[i] < 0)) {
+                v1.erase(v1.begin() + i);
+                break;
+            }
+        }
+        for (i = 0; i < v.size(); i++) {
+            cout << v1[i] << endl;
+        }
+        n = 0;
+        cout << "3adanie4(2)" << endl;
+        for (i = 0; i < v1.size(); i++) {
+            if ((v1[i] % 2) == 0) {
+                n = i;
+            }
+        }
+        v1.erase(v1.begin() + n);
+        for (i = 0; i < v1.size(); i++) {
+            cout << v1[i] << endl;
+        }
+        
+        
+        n = 0;
+        cout << "3adanie5" << endl;
+        cout << "vvedite na3vanie goroda:";
+        cin >> s1;
+        cout << "v stroke kolvo simvolov:";
+        n = s1.length();
+        if ((n % 2) == 0) {
+            cout << "Chetnoe" << endl;
+        }
+
+        else{ 
+            cout << "Nechetnoe" << endl;
+        }
+        n = 0;
+        x = 0;
+        cout << "3adanie6" << endl;
+        cout << "vvedite familii:";
+        cin >> s1;
+        cin >> s2;
+        cout << "pervaya familiya dlinee vtoroi:";
+        n = s1.length();
+        x = s2.length();
+        if (n > x) {
+            cout << "true" << endl;
+        }
+
+        else {
+            cout << "false" << endl;
+        }
+        n = 0;
+        x = 0;
+        p = 0;
+        cout << "3adanie7" << endl;
+        cout << "vvedite 3 goroda:";
+        cin >> s1;
+        cin >> s2;
+        cin >> s3;
+        
+        n = s1.length();
+        x = s2.length();
+        p = s3.length();
+        if ((n > x) && (n > p) && (x > p)) {
+            cout << "the longest: "<< s1<< endl;
+            cout<< "the_shortest: "<< s3 << endl;
+        }
+        if ((n > x) && (n > p) && (p > x)) {
+            cout << "the longest: " << s1 << endl;
+            cout << "the_shortest: " << s2 << endl;
+        }
+        if ((x > n) && (x > p) && (n > p)) {
+            cout << "the longest: " << s2 << endl;
+            cout << "the_shortest: " << s3 <<  endl;
+        }
+        if ((x > n) && (x > p) && (p > n)) {
+            cout << "the longest: " << s2 << endl;
+            cout << "the_shortest: " << s1 << endl;
+        }
+        if ((p > x) && (p > n) && (n > x)) {
+            cout << "the longest: " << s3 << endl;
+            cout << "the_shortest: " << s2 << endl;
+        } if ((p > x) && (p > n) && (x > n)) {
+            cout << "the longest: " << s3 << endl;
+            cout << "the_shortest: " << s1 << endl;
+        }
+         cout << "3adanie8" << endl;
+         cout << "vvedite slovo:" << endl;
+         cin >> s2;
+         cout << "vvedite s kakoy po kakyu bukvy:" << endl;
+         cin >> x;
+         cin >> n;
+          s1 = s2.substr(x - 1, n - x + 1);
+         cout << s1 << endl;
+         x = 0;
+         cout << "3adanie9" << endl;
+         cout << "vvedite slovo:" << endl;
+         cin >> s2;
+         x = s2.length();
+         for (i = 0; i < x; i++) {
+             s4 = s4 + "*";
+        }
+         s2 = s4 + s2 + s4;
+         cout << s2 << endl;
+         cout << "3adanie10" << endl;
+         cout << "vvedite slovo" << endl;
+         x = 0;
+         n = 0;
+         p = 0;
+         cin >> s1;
+         s2 = "a";
+         x = s1.length();
+         for (i = 0; i < x; i++) {
+             if (s1.substr(i, 1) == s2) {
+                 p++;
+             }
+         }
+         cout << "v slove bukv a:% " << (100*p / x) << endl;
+         cout << "3adanie11" << endl;
+         cout << "vvedite slovo dlya 3ameni na nego slova can" << endl;
+         cin >> s2;
+         s1 = "Can you can a can as a canner can can a can?";
+         s1.replace(s1.find("Can"), 3, s2);
+         s1.replace(s1.find("canner"), 6, "PIPO");
+         s1.replace(s1.find("can"), 3, s2);
+         s1.replace(s1.find("can"), 3, s2);
+         s1.replace(s1.find("can"), 3, s2);
+         s1.replace(s1.find("can"), 3, s2);
+         s1.replace(s1.find("can"), 3, s2);
+         s1.replace(s1.find("PIPO"), 4, "canner");
+         cout << s1;
+        system("pause");
+        return 0;
+    }
+   
